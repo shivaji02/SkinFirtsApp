@@ -1,10 +1,11 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { SignUpScreen } from "../../screens/auth/signUpScreen";
-import { SetPasswordScreen } from "../../screens/auth/setPasswordScreen";
-import { COLORS } from "../../theme/colors";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useState, useEffect } from "react";
 import { Appearance } from "react-native";
-import { useEffect, useState } from "react";
-import LoginScreen from "../../screens/auth/loginScreen";
+import LoginScreen from "../../screens/auth/loginScreen/loginScreen";
+import { SetPasswordScreen } from "../../screens/auth/setPassword/setPasswordScreen";
+import { SignUpScreen } from "../../screens/auth/signUp/signUpScreen";
+import { COLORS } from "../../theme/colors";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -35,9 +36,9 @@ const [theme, setTheme] = useState(Appearance.getColorScheme());
                 },
                 animation: "slide_from_right"
         }}>
-            <Stack.Screen name={"user/login"} component={LoginScreen}/>
-            <Stack.Screen name={"user/signUp"} component={SignUpScreen}/>
-            <Stack.Screen name={"user/setPassword"} component={SetPasswordScreen}/>
+            <Stack.Screen name={"login"} component={LoginScreen}/>
+            <Stack.Screen name={"signUp"} component={SignUpScreen}/>
+            <Stack.Screen name={"setPassword"} component={SetPasswordScreen}/>
         </Stack.Navigator>
     )
 }

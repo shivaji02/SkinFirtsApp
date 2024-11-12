@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import  LoginScreen  from '../../screens/auth/loginScreen';
+import  LoginScreen  from '../../screens/auth/loginScreen/loginScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 export const AppBottomTab =()=>{
