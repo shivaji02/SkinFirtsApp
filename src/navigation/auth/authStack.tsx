@@ -27,7 +27,7 @@ export const AuthStack = () => {
   return (
     <Stack.Navigator screenOptions={{
       headerShown: false,
-      statusBarTranslucent: true,
+      statusBarTranslucent: false,
       statusBarBackgroundColor: COLORS.common.transparent,
       statusBarStyle: theme === 'light' ? 'dark' : 'light',
       statusBarAnimation: 'slide',

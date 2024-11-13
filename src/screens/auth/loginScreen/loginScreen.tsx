@@ -6,15 +6,11 @@ const LoginScreen = () => {
 
   const styles = useStyle();
   useEffect(()=>{
-    console.log("HELLLO")
+    console.log("HELLO from LoginScreen.tsx");
   })
 
   return (
     <View >
-      <Text>Welcome to Login Screen</Text>
-      <Text>Welcome to Login Screen</Text>
-      <Text>Welcome to Login Screen</Text>
-      <Text>Welcome to Login Screen</Text>
       <Text>Welcome to Login Screen</Text>
 
     </View>

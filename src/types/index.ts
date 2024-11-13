@@ -38,3 +38,13 @@ export type RootStackParamList = {
 export interface Auth  {
     isValidated  : boolean;
 };
+
+
+export interface CustomImageProps {
+    source: string | any;
+    alt?: string; // Optional property
+    size?: number; // Optional property
+    onLoad?: () => void; // Optional property
+    borderRadius?: number;
+
+}
