@@ -1,12 +1,11 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { LoginScreen } from "../../screens/auth/loginScreen/loginScreen";
-
+import HomeScreen from "../../screens/Home";
 export const HomeStack =()=>{
     const Stack = createNativeStackNavigator();
- 
+    console.log('HomeStack.tsx');
     return(
-        <Stack.Navigator>
-            <Stack.Screen name={"user/home"} component={LoginScreen}/>
+        <Stack.Navigator initialRouteName="HomeScreen">
+            <Stack.Screen name={"HomeScreen"} component={HomeScreen}/>
         </Stack.Navigator>
     )
 }

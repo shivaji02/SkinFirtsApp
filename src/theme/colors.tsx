@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { colorsProps } from "../types/colorTheme";
 
 export const COLORS: colorsProps = {
