@@ -3,7 +3,7 @@ import { AppNav } from './navigation'
 import React from 'react';
 
  const App = ()=>{
-console.log('App.tsx in src');
+// console.log('App.tsx in src');
     return(
            <AppNav/>
     );
