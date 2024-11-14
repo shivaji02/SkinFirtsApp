@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import LOGO from "../../assets/images/TabBarIcons/activeChatIcon.svg"
 
 const HomeScreen = () => {
     console.log('HomeScreen.tsx');
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello, World!</Text>
+      <Text style={styles.text}>Hello World!</Text>
+      {/* <LOGO width={50} height={50} color='red'/> */}
     </View>
   );
 };
