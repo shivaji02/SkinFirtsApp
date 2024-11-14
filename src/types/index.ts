@@ -8,23 +8,6 @@ export interface User {
     avatarUrl?: string; // Optional property
 }
 
-// Define a type for a Product
-export interface Product {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    imageUrl: string;
-}
-
-// Define a type for an Order
-export interface Order {
-    id: number;
-    userId: number;
-    productIds: number[];
-    totalAmount: number;
-    orderDate: string;
-}
 
 // Define a type for Navigation Props (React Navigation)
 export type RootStackParamList = {

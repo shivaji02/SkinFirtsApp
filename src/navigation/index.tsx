@@ -2,8 +2,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { AuthStack } from "./auth/authStack";
-import { AppBottomTab } from './app/appBottomTab';
-import { Auth } from "../types";
+import AppBottomTab from './app/appBottomTab';
 
 
 export const AppNav =()=>{
