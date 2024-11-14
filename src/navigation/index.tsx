@@ -12,7 +12,7 @@ console.log('AppNav.tsx');
     const isValidated = false;
    return(
     <NavigationContainer>
-        {isValidated ? <AuthStack /> : <AppBottomTab />}
+        {isValidated ? <AppBottomTab /> : <AuthStack />}
     </NavigationContainer>
    );
 };

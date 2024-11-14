@@ -96,11 +96,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeStack } from './homeStack';
-import LoginScreen from '../../screens/auth/loginScreen/loginScreen';
-import ActiveHomeIcon from '../../assets/images/TabBarIcons/activeHomeIcon.svg';
-import InactiveHomeIcon from '../../assets/images/TabBarIcons/inactiveHomeIcon.svg';
-import ActiveChatIcon from '../../assets/images/TabBarIcons/activeChatIcon.svg';
-import InactiveChatIcon from '../../assets/images/TabBarIcons/activeChatIcon.svg';
+import { ActiveHomeIcon, ActiveChatIcon, InactiveHomeIcon, InactiveChatIcon } from '../../assets/svg/TabBarSvg'
 
 const BottomTab = createBottomTabNavigator();
 
