@@ -6,6 +6,8 @@ import LoginScreen from '../../screens/auth/loginScreen/loginScreen';
 import { SetPasswordScreen } from '../../screens/auth/setPassword/setPasswordScreen';
 import { SignUpScreen } from '../../screens/auth/signUp/signUpScreen';
 import { COLORS } from '../../theme/colors';
+import MyProfileScreen from '../../screens/app/MyProfileScreen';
+import { FontStyle } from '../../theme/fontStyle';
 
 
 const Stack = createNativeStackNavigator();
@@ -37,9 +39,22 @@ export const AuthStack = () => {
       },
       animation: 'slide_from_right'
     }}>
+      <Stack.Screen name={'MyProfileScreen'} component={MyProfileScreen} 
+       options={{headerShown: true,
+        title: "My Profile",
+        headerTitleAlign: 'center',
+        headerTintColor:'#2260FF',
+        headerTitleStyle: {
+          fontSize: 24,
+          fontWeight: '600'
+        },
+        headerShadowVisible: false
+       
+        }} />
       <Stack.Screen name={'login'} component={LoginScreen} />
       <Stack.Screen name={'signUp'} component={SignUpScreen} />
       <Stack.Screen name={'setPassword'} component={SetPasswordScreen} />
+      
     </Stack.Navigator>
   );
 };
