@@ -1,22 +1,50 @@
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
-import { CustomImageProps } from '../../types';
-
-export const CustomImage = ({ source, size = 100, onLoad, borderRadius = 0 }: CustomImageProps) => {
-  const imageSource = typeof source === 'string' ? { uri: source } : source;
+import { Image, ImageProps, StyleSheet, View, ActivityIndicator } from 'react-native';
+import { CustomImageProps } from '../../types/index';
+const CustomImage: React.FC<CustomImageProps> = ({
+  height,
+  width,
+  borderRadius,
+  source,
+  style,
+  ...props
+}) => {
+  const [loading, setLoading] = React.useState(true);
 
   return (
-    <Image
-      source={imageSource}
-      style={[styles.image, { width: size, height: size, borderRadius }]}
-      onLoad={onLoad}
-    />
+    <View style={[styles.container, { height, width, borderRadius }]}>
+      {loading && (
+        <ActivityIndicator
+          style={styles.loading}
+          size="small"
+          color="#0000ff"
+        />
+      )}
+      <Image
+        source={source}
+        style={[
+          styles.image,
+          { height, width, borderRadius },
+          style,
+        ]}
+        onLoadEnd={() => setLoading(false)}
+        {...props}
+      />
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
+  },
   image: {
     resizeMode: 'cover',
+  },
+  loading: {
+    position: 'absolute',
   },
 });
 

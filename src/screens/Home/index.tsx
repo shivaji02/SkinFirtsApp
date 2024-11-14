@@ -5,7 +5,7 @@ const HomeScreen = () => {
     console.log('HomeScreen.tsx');
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello, World!</Text>
+      <Text style={styles.text}>Hello World! SKin Firts</Text>
     </View>
   );
 };

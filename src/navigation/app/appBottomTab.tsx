@@ -1,11 +1,9 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet } from 'react-native';
-import LoginScreen from '../../screens/auth/loginScreen/loginScreen';
 import { HomeStack } from './homeStack';
-import { COLORS } from '../../theme/colors';
-import CustomImage from '../../components/CustomImage';
+import { ActiveHomeIcon, ActiveChatIcon, InactiveHomeIcon, InactiveChatIcon, ActiveProfileIcon, InactiveProfileIcon,  ActiveCalendarIcon, InactiveCalendarIcon } from '../../assets/svg/TabBarSvg'
+import { COLORS} from '../../theme/colors';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -16,6 +14,7 @@ export const AppBottomTab = () => {
       screenOptions={{
         headerShown: false,
         tabBarStyle: styles.tabBar,
+        tabBarShowLabel: false,//label is hidden
       }}
     >
       <BottomTab.Screen
@@ -25,66 +24,65 @@ export const AppBottomTab = () => {
           tabBarLabel: 'Home',
           tabBarIcon: ({ focused, size }) =>
             focused ? (
-              <CustomImage source={require('src/assets/images/TabBarIcons/PNG/activeHomeIcon.png')} size={size} />
+              <ActiveHomeIcon size={size} />
             ) : (
-              <CustomImage source={require('src/assets/images/TabBarIcons/PNG/inactiveHomeIcon.png')} size={size} />
+              <InactiveHomeIcon size={size} />
             ),
         }}
       />
       <BottomTab.Screen
         name="Chat"
-        component={LoginScreen}
+        component={HomeStack}
         options={{
           tabBarLabel: 'Chat',
           tabBarIcon: ({ focused, size }) =>
             focused ? (
-              <CustomImage source={require('src/assets/images/TabBarIcons/PNG/activeChatIcon.png')} size={size} />
+              <ActiveChatIcon size={size} />
             ) : (
-              <CustomImage source={require('src/assets/images/TabBarIcons/PNG/inactiveChatIcon.png')} size={size} />
+              <InactiveChatIcon size={size} />
             ),
         }}
       />
       <BottomTab.Screen
         name="Profile"
-        component={LoginScreen}
+        component={HomeStack}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ focused, size }) =>
             focused ? (
-              <CustomImage source={require('src/assets/images/TabBarIcons/PNG/activeProfileIcon.png')} size={size} />
+              <ActiveProfileIcon size={size} />
             ) : (
-              <CustomImage source={require('src/assets/images/TabBarIcons/PNG/inactiveProfileIcon.png')} size={size} />
+              <InactiveProfileIcon size={size} />
             ),
         }}
       />
       <BottomTab.Screen
         name="Appointment"
-        component={LoginScreen}
+        component={HomeStack}
         options={{
           tabBarLabel: 'Appointment',
           tabBarIcon: ({ focused, size }) =>
             focused ? (
-              <CustomImage source={require('src/assets/images/TabBarIcons/PNG/activeCalendarIcon.png')} size={size} />
+              <ActiveCalendarIcon size={size} />
             ) : (
-              <CustomImage source={require('src/assets/images/TabBarIcons/PNG/inactiveCalendarIcon.png')} size={size} />
+              <InactiveCalendarIcon size={size} />
             ),
         }}
       />
     </BottomTab.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
+const styles = {
   tabBar: {
     backgroundColor: COLORS.primary.main,
-    borderTopWidth: 0,
-    height: 58,
-    width: 398,
-    alignSelf: 'center',
-    borderRadius: 35,
-    paddingBottom: 5,
-    marginBottom: 5,
+    height: 60,  // Consider using a relative size or a size that fits well with all devices
+    width: '100%',  // Use 100% width for full width
+    borderRadius: 30,
+    justifyContent: 'center',  // Center the items
+    paddingTop: 10,
+    position: 'absolute',
+    bottom: 10,
   },
-});
+};
 
 export default AppBottomTab;

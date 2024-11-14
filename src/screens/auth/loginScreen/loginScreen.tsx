@@ -5,6 +5,7 @@ import { useStyle } from './styles';
 const LoginScreen = () => {
 
   const styles = useStyle();
+  
   useEffect(()=>{
     console.log("HELLO from LoginScreen.tsx");
   })

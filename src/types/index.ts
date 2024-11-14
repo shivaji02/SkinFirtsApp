@@ -24,10 +24,21 @@ export interface Auth  {
 
 
 export interface CustomImageProps {
-    source: string | any;
+    source: string |{uri : string} | any;
     alt?: string; // Optional property
     size?: number; // Optional property
     onLoad?: () => void; // Optional property
+    height?: number; // Optional property
+    width?: number; // Optional property
     borderRadius?: number;
+    style ? : any;
+    
 
 }
+
+export interface AppBottomTabT{
+    size: number;
+    focused: boolean;
+
+}
+
