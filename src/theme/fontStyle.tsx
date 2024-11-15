@@ -16,9 +16,13 @@ export const FontStyle =({ color = COLORS.common.black, fontsize, fontFamily, li
     return{
         color: color,
         fontSize: fontsize,
-        fontFamily: typeof fontFamily === "string" ? fontFamily : LeagueSpartanFont[fontFamily as LeagueSpartanFontFamily],
+        fontFamily: isFontFamilyKey(fontFamily) ?  LeagueSpartanFont[fontFamily as LeagueSpartanFontFamily]:fontFamily ,
         ...(lineHeight && { lineHeight })
     }
 }
 
 export type LeagueSpartanFontFamily = keyof typeof LeagueSpartanFont;
+
+export const isFontFamilyKey = (key: string): key is LeagueSpartanFontFamily => {
+    return key in LeagueSpartanFont;
+};
