@@ -1,6 +1,7 @@
-import React from 'react';
-import { Image, ImageProps, StyleSheet, View, ActivityIndicator } from 'react-native';
+import React,{useState} from 'react';
+import { Image, StyleSheet, View, ActivityIndicator } from 'react-native';
 import { CustomImageProps } from '../../types/index';
+
 const CustomImage: React.FC<CustomImageProps> = ({
   height,
   width,
@@ -9,7 +10,7 @@ const CustomImage: React.FC<CustomImageProps> = ({
   style,
   ...props
 }) => {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = useState(true);
 
   return (
     <View style={[styles.container, { height, width, borderRadius }]}>

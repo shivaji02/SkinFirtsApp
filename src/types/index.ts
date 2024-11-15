@@ -1,4 +1,8 @@
+import { BackgroundColor } from './../../node_modules/csstype/index.d';
 // src/types/index.ts
+
+import { ViewStyle } from 'react-native';
+import { SvgProps } from 'react-native-svg';
 
 // Define a type for a User
 export interface User {
@@ -20,7 +24,7 @@ export type RootStackParamList = {
 
 export interface Auth  {
     isValidated  : boolean;
-};
+}
 
 
 export interface CustomImageProps {
@@ -32,7 +36,7 @@ export interface CustomImageProps {
     width?: number; // Optional property
     borderRadius?: number;
     style ? : any;
-    
+
 
 }
 
@@ -42,3 +46,32 @@ export interface AppBottomTabT{
 
 }
 
+
+export interface PersonalDetailsT {
+
+    name : String;
+
+    age : number;
+
+    email : String;
+
+    address : {
+
+        street: string;
+
+        city: string;
+
+        state: string;
+
+        pin: string;
+    };
+    phone : string;
+}
+
+export interface CustomIconProps {
+    IconComponent: React.FC<SvgProps>;
+    size?: number;
+    onPress?: () => void;
+    style?: ViewStyle;
+    BackgroundColor?:any
+  }

@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
+import HeadBar from './HeadBar';
 const HomeScreen = () => {
     console.log('HomeScreen.tsx');
   return (
     <View style={styles.container}>
+      <HeadBar />
       <Text style={styles.text}>Hello World! SKin Firts</Text>
     </View>
   );

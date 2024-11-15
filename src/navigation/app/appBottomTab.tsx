@@ -75,13 +75,13 @@ export const AppBottomTab = () => {
 const styles = {
   tabBar: {
     backgroundColor: COLORS.primary.main,
-    height: 60,  // Consider using a relative size or a size that fits well with all devices
-    width: '100%',  // Use 100% width for full width
+    height: 60,
+    width: '92%',
     borderRadius: 30,
-    justifyContent: 'center',  // Center the items
     paddingTop: 10,
-    position: 'absolute',
     bottom: 10,
+    position: 'absolute',
+    marginHorizontal: 17,
   },
 };
 
