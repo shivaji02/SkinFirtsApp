@@ -1,6 +1,5 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet, ViewStyle } from 'react-native';
-import { SvgProps } from 'react-native-svg';
 import { CustomIconProps } from '../../types/index';
 
 const CustomIcon: React.FC<CustomIconProps> = ({
@@ -8,10 +7,13 @@ const CustomIcon: React.FC<CustomIconProps> = ({
   size = 24,
   onPress,
   style,
+  backgroundColor = 'transparent', // Default background color
+  iconColor,
+  padding
 }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.iconContainer, style]}>
-      <IconComponent width={size} height={size} />
+    <TouchableOpacity onPress={onPress} style={[styles.iconContainer, { backgroundColor, padding }, style]}>
+      <IconComponent width={size} height={size} color={iconColor} />
     </TouchableOpacity>
   );
 };
@@ -20,6 +22,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius:50,
   },
 });
 

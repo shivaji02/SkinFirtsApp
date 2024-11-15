@@ -72,6 +72,9 @@ export interface CustomIconProps {
     IconComponent: React.FC<SvgProps>;
     size?: number;
     onPress?: () => void;
+    text?:string;
     style?: ViewStyle;
-    BackgroundColor?:any
-  }
+    backgroundColor?: string; // Add background color
+    iconColor?: string;       // Add icon color for the SVG component
+    padding?: number;         // Optional padding around the icon
+}

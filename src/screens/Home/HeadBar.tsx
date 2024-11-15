@@ -34,7 +34,7 @@ const HeadBar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     alignItems: 'flex-start',
     marginLeft: -50,
@@ -63,9 +63,6 @@ const styles = StyleSheet.create({
     },
     iconcontainer:{
         flexDirection: 'row',
-        // alignItems: 'center',
-        // position: 'absolute',
-        // right: 20,
         justifyContent:'flex-end',
         top: 13,
         gap: 10,
