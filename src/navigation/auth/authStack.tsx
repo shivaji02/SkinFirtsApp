@@ -6,6 +6,7 @@ import LoginScreen from '../../screens/auth/loginScreen/loginScreen';
 import { SetPasswordScreen } from '../../screens/auth/setPassword/setPasswordScreen';
 import { SignUpScreen } from '../../screens/auth/signUp/signUpScreen';
 import { COLORS } from '../../theme/colors';
+// import { WelcomeScreen } from '../../screens/auth/welcomeScreen/welcomeScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -37,6 +38,7 @@ export const AuthStack = () => {
       },
       animation: 'slide_from_right'
     }}>
+      {/* <Stack.Screen name={'welcome'} component={WelcomeScreen} /> */}
       <Stack.Screen name={'login'} component={LoginScreen} />
       <Stack.Screen name={'signUp'} component={SignUpScreen} />
       <Stack.Screen name={'setPassword'} component={SetPasswordScreen} />

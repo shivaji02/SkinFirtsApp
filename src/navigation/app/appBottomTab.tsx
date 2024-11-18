@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeStack } from './homeStack';
 import { ActiveHomeIcon, ActiveChatIcon, InactiveHomeIcon, InactiveChatIcon, ActiveProfileIcon, InactiveProfileIcon,  ActiveCalendarIcon, InactiveCalendarIcon } from '../../assets/svg/TabBarSvg'
 import { COLORS} from '../../theme/colors';
+import LoginScreen from '../../screens/auth/loginScreen/loginScreen';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -77,7 +78,7 @@ const styles = {
     backgroundColor: COLORS.primary.main,
     height: 60,
     width: '92%',
-    borderRadius: 30,
+    borderRadius: 50,
     paddingTop: 10,
     bottom: 10,
     position: 'absolute',

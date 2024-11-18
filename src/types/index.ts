@@ -1,7 +1,7 @@
 import { BackgroundColor } from './../../node_modules/csstype/index.d';
 // src/types/index.ts
 
-import { ViewStyle } from 'react-native';
+import { TextInputProps, ViewStyle } from 'react-native';
 import { SvgProps } from 'react-native-svg';
 
 // Define a type for a User
@@ -78,3 +78,15 @@ export interface CustomIconProps {
     iconColor?: string;       // Add icon color for the SVG component
     padding?: number;         // Optional padding around the icon
 }
+
+
+export interface SearchBarProps extends TextInputProps {
+    bgColor?: string;
+    height?: number;
+    width?: number | string;
+    leftIcon?: React.ComponentType;
+    rightIcon?: React.ComponentType;
+    leftIconSize?: number;
+    rightIconSize?: number;
+    style?: ViewStyle;
+  }
