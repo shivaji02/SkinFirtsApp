@@ -5,7 +5,7 @@ export const COLORS: colorsProps = {
     primary: {
         main: "#2260FF",
         dark: "#00278C",
-        light: "#7714169e",
+        light: "#CAD6FF",
         100: "#ECF1FF",//placeholder bg
         200:"#809CFF",//placeholder color
         300: "#CAD6FF",
@@ -48,5 +48,6 @@ export const COLORS: colorsProps = {
         black: "#000000",
         backdrop: "#1c1926ed",
         modal: "#1c1926ad",
-    }
+    },
+  
 }

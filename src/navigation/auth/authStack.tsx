@@ -17,10 +17,13 @@ export const AuthStack = () => {
 
   useEffect(() => {
     const subscription = Appearance.addChangeListener(({ colorScheme }) => {
+      console.log(colorScheme,"Hello")
       setTheme(colorScheme); // Update theme on system theme change
+      // console.log(theme,"Theme")
     });
 
     return () => {
+      // console.log("HEllo")
       subscription.remove();
     };
   }, []);
@@ -29,13 +32,14 @@ export const AuthStack = () => {
     <Stack.Navigator screenOptions={{
       headerShown: false,
       statusBarTranslucent: false,
-      statusBarBackgroundColor: COLORS.common.transparent,
+      // statusBarBackgroundColor: COLORS.common.transparent,
       statusBarStyle: theme === 'light' ? 'dark' : 'light',
       statusBarAnimation: 'slide',
-      orientation: 'portrait',
+      // orientation: 'portrait',
       contentStyle: {
         backgroundColor: theme === 'light' ? COLORS.common.white : COLORS.common.black,
       },
+      // orientation:'portrait_up',
       animation: 'slide_from_right'
     }}>
       <Stack.Screen name={'welcome'} component={WelcomeScreen} />

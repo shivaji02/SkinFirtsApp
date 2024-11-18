@@ -9,7 +9,7 @@ import { Auth } from "../types";
 export const AppNav =()=>{
 console.log('AppNav.tsx');
 
-    const isValidated = true;
+    const isValidated = false;
    return(
     <NavigationContainer>
         {isValidated ? <AppBottomTab /> : <AuthStack />}

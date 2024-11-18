@@ -12,7 +12,7 @@ export const LeagueSpartanFont ={
     Black:"LeagueSpartan-Black",//900
 }
 
-export const FontStyle =({ color = COLORS.common.black, fontsize, fontFamily, lineHeight}: { color: string; fontsize?: number | undefined; fontFamily: LeagueSpartanFontFamily|string; lineHeight?:number})=>{
+export const FontStyle =({ color = COLORS.common.black, fontsize, fontFamily, lineHeight}: { color?: string; fontsize?: number | undefined; fontFamily: LeagueSpartanFontFamily|string; lineHeight?:number})=>{
     return{
         color: color,
         fontSize: fontsize,

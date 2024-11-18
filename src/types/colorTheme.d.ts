@@ -45,5 +45,6 @@ export type colorsProps = {
         black: string,
         backdrop: string,
         modal: string,
-    }
+    },
+ 
 }
