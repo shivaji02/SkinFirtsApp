@@ -1,13 +1,12 @@
-/* eslint-disable react/react-in-jsx-scope */
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import HomeScreen from "../../screens/Home";
-// import TestScreen from "../../screens/testScreenCheck";
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from '../../screens/Home';
 
-export const HomeStack =()=>{
+export const HomeStack = ()=>{
     const Stack = createNativeStackNavigator();
     console.log('HomeStack.tsx');
     return(
-        <Stack.Navigator 
+        <Stack.Navigator
         screenOptions={
             {
                 headerShown: false,
@@ -24,8 +23,8 @@ export const HomeStack =()=>{
         }
 
         >
-            <Stack.Screen name={"HomeScreen"} component={HomeScreen}/>
+            <Stack.Screen name={'HomeScreen'} component={HomeScreen}/>
             {/* <Stack.Screen name={"TestScreen"} component={TestScreen}/> */}
         </Stack.Navigator>
-    )
-}
+    );
+};

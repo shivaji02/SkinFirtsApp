@@ -14,7 +14,7 @@ export const scale = (size : number) => (screenWidth / baseWidth) * size;
 export const verticalScale = (size : number)  => (screenHeight / baseHeight) * size;
 
 //Functions to scale size with a factor for more fine-tuned scaling
-export const moderateScale = (size :number, factor = 0.5) => size + (scale(size) - size) *factor;
+export const moderateScale = (size :number, factor = 0.5) => size + (scale(size) - size) * factor;
 
 // Function to normalize font sizes across different screen densities
 
@@ -36,5 +36,14 @@ export const widthPercentageToDP = (widthPercent : string | number) =>{
 
 export const heightPercentageToDP = (heightPercentage : string| number) => {
     const elemHeight = typeof heightPercentage  === 'number' ? heightPercentage : parseFloat(heightPercentage);
-    return PixelRatio.roundToNearestPixel((screenHeight * elemHeight)/100);
+    return PixelRatio.roundToNearestPixel((screenHeight * elemHeight) / 100);
 };
+
+
+// demonstration to use it after export 
+//import { scale, verticalScale, moderateScale, normalizeFontSize, widthPercentageToDP, heightPercentageToDP } from './responsiveUtils';
+// padding: widthPercentageToDP(5),
+// fontSize: normalizeFontSize(16),
+// marginBottom: verticalScale(10),
+// width: widthPercentageToDP(50),
+// height: heightPercentageToDP(20),

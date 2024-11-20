@@ -1,27 +1,29 @@
 import React from 'react';
-import { View, TextInput, StyleSheet, ViewStyle, TextInputProps } from 'react-native';
+import { View, TextInput, StyleSheet, DimensionValue } from 'react-native';
 import CustomIcon from '../CustomIcon'; // Ensure you have the CustomIcon component
-import { SvgProps } from 'react-native-svg';
-import {SearchBarProps}   from '../../types/index';
+import { SearchBarProps } from '../../types/index';
+
 const SearchBar: React.FC<SearchBarProps> = ({
-  bgColor = '#fff',
   height = 40,
   width = '100%',
+  bgColor = '#fff',
   leftIcon: LeftIcon,
   rightIcon: RightIcon,
   leftIconSize = 24,
   rightIconSize = 24,
+  leftIconStyle,
+  rightIconStyle,
   style,
   ...props
 }) => {
   return (
-    <View style={[styles.container, { backgroundColor: bgColor, height, width }, style]}>
-      {LeftIcon && <CustomIcon IconComponent={LeftIcon} size={leftIconSize} style={styles.leftIcon} />}
+    <View style={[styles.container, { backgroundColor: bgColor, height, width: width as DimensionValue }, style]}>
+      {LeftIcon && <CustomIcon IconComponent={LeftIcon} size={leftIconSize} style={StyleSheet.flatten([styles.leftIcon, leftIconStyle])} />}
       <TextInput
         style={[styles.input, { height }]}
         {...props}
       />
-      {RightIcon && <CustomIcon IconComponent={RightIcon} size={rightIconSize} style={styles.rightIcon} />}
+      {RightIcon && <CustomIcon IconComponent={RightIcon} size={rightIconSize} style={StyleSheet.flatten([styles.rightIcon, rightIconStyle])} />}
     </View>
   );
 };
