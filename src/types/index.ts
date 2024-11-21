@@ -1,3 +1,4 @@
+import { calendarData } from './../data/calendarData/index';
 import { BackgroundColor } from './../../node_modules/csstype/index.d';
 // src/types/index.ts
 
@@ -95,3 +96,14 @@ export interface SearchBarProps extends TextInputProps {
     leftIconStyle?: ViewStyle,
     rightIconStyle?: ViewStyle,
   }
+
+  export interface calendarDataT{
+week :string;
+dates: string;
+appointments :
+   { day: string,
+    time :string,
+    description: string,
+    isSelected:boolean,
+  }[],
+ };
