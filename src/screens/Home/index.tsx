@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import HeadBar from './HeadBar';
 import IconBar from './IconBar';
-import CalendarWithAgenda from '../../components/calenderBlock/index.tsx';
-import { calendarData } from '../../data/calendarData/index.ts';
+import CalAgend from './CalAgend';
+// import { CalendarBox } from '../../components/CalendarBox';
+// import { AgendaBox } from '../../components/AgendaBox';
+
 const HomeScreen = () => {
 
-  
     console.log('HomeScreen.tsx');
   return (
     <View style={styles.container}>
       <HeadBar />
       <IconBar />
-<CalendarWithAgenda data={calendarData}/>
-    </View>
+      <CalAgend/>
+     </View>
   );
 };
 
