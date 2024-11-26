@@ -1,27 +1,27 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import HeadBar from './HeadBar';
 import IconBar from './IconBar';
-import CalendarBox from '../../components/calenderBox.tsx';
-import { COLORS } from '../../theme/colors';
-import{calendarData}  from '../../data/calendarData'
+import CalendarWithAgenda from '../../components/calenderBlock/index.tsx';
+import { calendarData } from '../../data/calendarData/index.ts';
 const HomeScreen = () => {
+
+  
     console.log('HomeScreen.tsx');
   return (
     <View style={styles.container}>
       <HeadBar />
       <IconBar />
-      <CalendarBox data={calendarData}/>
+<CalendarWithAgenda data={calendarData}/>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5fcff',
+    // backgroundColor: '#f5fcff',
   },
   
 });

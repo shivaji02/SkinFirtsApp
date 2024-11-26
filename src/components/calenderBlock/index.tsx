@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../utils/responsiveUtils'; // For responsiveness
-import { calendarData } from '../../data/calendarData'; // Data for the calendar
+import { calendarData } from '../../data/calendarData';
 
 const CalendarBox = ({ data }: { data: typeof calendarData }) => {
   return (
     <View style={styles.container}>
       {/* Week Days */}
-      <FlatList
+      {/* <FlatList
         horizontal
         data={data.dates}
         keyExtractor={(item, index) => index.toString()}
@@ -19,11 +19,11 @@ const CalendarBox = ({ data }: { data: typeof calendarData }) => {
         )}
         showsHorizontalScrollIndicator={true} // For horizontal scroll bar
         
-      />
+      /> */}
 
       {/* Appointments */}
       <View style={styles.appointmentContainer}>
-        {data.appointments.map((appointment, index) => (
+        {Object.values(data.appointments).flat().map((appointment: { isSelected: any; time: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; title: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; description: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }, index: React.Key | null | undefined) => (
           <TouchableOpacity
             key={index}
             style={[
