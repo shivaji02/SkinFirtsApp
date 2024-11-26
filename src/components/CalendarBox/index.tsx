@@ -1,7 +1,9 @@
 import { getCalendarDays } from '../../Hooks/getCalenderDays.ts/index.ts';
 import React, { useState } from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, Text } from 'react-native';
-import { heightPercentageToDP,scale,widthPercentageToDP } from '../../utils/responsiveUtils.ts';
+import { heightPercentageToDP,scale,widthPercentageToDP,normalizeFontSize } from '../../utils/responsiveUtils.ts';
+import {LeagueSpartanFont} from '../../theme/fontStyle.tsx';
+import { COLORS } from '../../theme/colors.tsx';
 interface CalendarBoxProps {
   onSelectedDate: (date: string) => void;
 }
@@ -18,7 +20,6 @@ console.log("CalenderBox.tsx in components")
       data={calendarDays}
       keyExtractor={(item) => item.date}
       renderItem={({ item }) => (
-        // Ensure you return JSX here
         <TouchableOpacity
           onPress={() => {
             setSelectedDate(item.date);
@@ -29,8 +30,13 @@ console.log("CalenderBox.tsx in components")
             selectedDate === item.date ? styles.selectedDay : null,
           ]}
         >
-          <Text style={styles.dayText}>{item.day}</Text>
-          <Text style={styles.dateText}>{item.date.split('-')[2]}</Text>
+            <Text style={selectedDate === item.date ? [styles.dateText, styles.selectedText] : styles.dateText}>
+            {item.date.split('-')[2]}
+            </Text>
+            <Text style={selectedDate === item.date ? [styles.dayText, styles.selectedText] : styles.dayText}>
+            {item.day.toUpperCase()}
+            </Text>
+           
         </TouchableOpacity>
       )}
       showsHorizontalScrollIndicator={false}
@@ -42,29 +48,34 @@ console.log("CalenderBox.tsx in components")
 const styles = StyleSheet.create({
   scrollContainer: {
      paddingHorizontal: 10,
+     gap:widthPercentageToDP(2),
   },
   dayBox: {
 
     height:heightPercentageToDP(10),
-    width: widthPercentageToDP(6.5),
+    width: widthPercentageToDP(6),
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
-    marginHorizontal: 5,
-    borderRadius: 15,
-    backgroundColor: '#fff',
+    // padding: 10,
+    // marginHorizontal: 5,
+    borderRadius: 18,
 
   },
+
   selectedDay: {
-    backgroundColor: '#4a90e2',
+    backgroundColor: COLORS.primary.main,
+  },
+  selectedText:{
+    color:COLORS.common.white,
   },
   dayText: {
-    fontSize: 14,
-    color: '#555',
+    fontSize: normalizeFontSize(15),
+    fontFamily:LeagueSpartanFont.Light,
+    color: COLORS.common.black,
   },
   dateText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#000',
+    fontSize: normalizeFontSize(25),
+    fontFamily: LeagueSpartanFont.SemiBold,
+    color: COLORS.common.black,
   },
 });

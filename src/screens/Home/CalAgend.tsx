@@ -19,7 +19,7 @@ return(
 const styles= StyleSheet.create({
     container:{
         // flexDirection:'column',
-        gap:scale(4),
+        gap:scale(10),
         height: heightPercentageToDP(15),
         justifyContent:'center',
         // width:widthPercentageToDP(90),
