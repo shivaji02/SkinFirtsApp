@@ -9,7 +9,7 @@ import { scale,moderateScale,verticalScale } from '../../utils/responsiveUtils';
 
 import { NoticationBellIcon, SettingIcon } from '../../assets/svg/HomeScreensvg';
 const HeadBar = () => {
-    console.log('HomeScreen.tsx');
+    console.log('headbar firstLine UI rendered in HomeScreen.tsx ');
   return (
     <View style={styles.container}>
       <View style={styles.imgtext}>

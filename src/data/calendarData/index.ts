@@ -1,21 +1,17 @@
-export const calendarData = {
-    week: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    dates: ['9', '10', '11', '12', '13', '14', '15'], // Representing dates
-    appointments: [
-      {
-        day: 'Wed',
-        time: '10 AM',
-        title: 'Dr. Olivia Turner, M.D.',
-        description: 'Treatment and prevention of skin and photodermatitis.',
-        isSelected: true, // Boolean to toggle color
-      },
-      {
-        day: 'Thu',
-        time: '11 AM',
-        title: 'Dr. Alexander Bennett, Ph.D.',
-        description: 'Dermato-Genetics session.',
-        isSelected: false,
-      },
+export const   appointments = {
+    '2024-11-26': [
+      { time: '10:00 AM', title: 'Dr. Olivia Turner', description: 'Skin treatment.' },
+      { time: '11:00 AM', title: 'Dr. Alexander Bennett', description: 'Follow-up.' },
+    ],
+  '2024-11-27': [
+      { time: '2:00 PM', title: 'Dr. Sophia Martinez', description: 'Consultation.' },
+    ],
+   '2024-11-28': [
+      { time: '4:00 PM', title: 'Dr. Michael Davidson', description: 'Routine check-up.' },
     ],
   };
-  
+  export const markedDates = {
+   '2024-11-26': { marked: true, dotColor: 'blue' },
+    '2024-11-27': { marked: true, dotColor: 'green' },
+    '2024-11-28': { marked: true, dotColor: 'red' },
+}

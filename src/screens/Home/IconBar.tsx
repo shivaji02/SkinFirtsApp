@@ -30,6 +30,7 @@ const IconBar = () => {
                 width={widthPercentageToDP(27)}
                 style={styles.searchbar}
                 rightIconStyle={styles.lefticon}
+                // onChange={(text) => console.log(text)}
             />
         </View>
     );
@@ -51,17 +52,14 @@ const styles = StyleSheet.create({
         borderRadius:30,
         backgroundColor: COLORS.primary[300],
         marginLeft:widthPercentageToDP(2),
-        // paddingTop:heightPercentageToDP(1),
-        top:heightPercentageToDP(0.5),
+        top:heightPercentageToDP(1),
         marginBottom:heightPercentageToDP(-3),
         marginRight:widthPercentageToDP(2),
-
     },
     lefticon:{
         marginLeft:widthPercentageToDP(-1),
         marginRight:widthPercentageToDP(-1),
         top:heightPercentageToDP(0.5),
-        
     },
 });
 
