@@ -7,6 +7,7 @@ import { SetPasswordScreen } from '../../screens/auth/setPassword/setPasswordScr
 import { SignUpScreen } from '../../screens/auth/signUp/signUpScreen';
 import { COLORS } from '../../theme/colors';
 import { WelcomeScreen } from '../../screens/auth/welcomeScreen/welcomeScreen';
+import { FontStyle } from '../../theme/fontStyle';
 
 
 const Stack = createNativeStackNavigator();
@@ -30,22 +31,23 @@ export const AuthStack = () => {
 
   return (
     <Stack.Navigator screenOptions={{
-      headerShown: false,
-      statusBarTranslucent: false,
-      // statusBarBackgroundColor: COLORS.common.transparent,
       statusBarStyle: theme === 'light' ? 'dark' : 'light',
       statusBarAnimation: 'slide',
+      statusBarBackgroundColor:theme === 'light' ? COLORS.common.white : COLORS.common.black,
       // orientation: 'portrait',
       contentStyle: {
         backgroundColor: theme === 'light' ? COLORS.common.white : COLORS.common.black,
       },
-      // orientation:'portrait_up',
-      animation: 'slide_from_right'
+      headerTitleStyle:{...FontStyle({color: COLORS.primary.main, fontsize: 24, fontFamily: 'SemiBold', lineHeight:22.08}),},
+      animation: 'slide_from_right',
+      headerTintColor : COLORS.primary.main,
+      headerShadowVisible : false,
+      headerTitleAlign:'center'
     }}>
-      <Stack.Screen name={'welcome'} component={WelcomeScreen} />
-      <Stack.Screen name={'login'} component={LoginScreen} />
-      <Stack.Screen name={'signUp'} component={SignUpScreen} />
-      <Stack.Screen name={'setPassword'} component={SetPasswordScreen} />
+      <Stack.Screen name={'welcome'} component={WelcomeScreen} options={{headerShown:false}} />
+      <Stack.Screen name={'login'} component={LoginScreen} options={{title:"Log In"}} />
+      <Stack.Screen name={'signUp'} component={SignUpScreen} options={{title:"New Account"}} />
+      <Stack.Screen name={'setPassword'} component={SetPasswordScreen} options={{title:"Set Password"}}/>
     </Stack.Navigator>
   );
 };

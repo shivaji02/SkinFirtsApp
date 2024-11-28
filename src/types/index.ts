@@ -84,9 +84,14 @@ export interface SearchBarProps extends TextInputProps {
     bgColor?: string;
     height?: number;
     width?: number | string;
-    leftIcon?: React.ComponentType;
-    rightIcon?: React.ComponentType;
+    // leftIcon?: React.ComponentType;
+    // rightIcon?: React.ComponentType;
+    leftIcon?:React.FC<SvgProps>;
+    rightIcon?:React.FC<SvgProps>;
     leftIconSize?: number;
     rightIconSize?: number;
     style?: ViewStyle;
+    onSearch?:(text: string) => void;
+    leftIconStyle?: ViewStyle,
+    rightIconStyle?: ViewStyle,
   }

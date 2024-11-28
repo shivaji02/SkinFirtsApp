@@ -1,16 +1,21 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import React, { useMemo } from 'react';
+import { TouchableOpacity, Text, StyleSheet, TextStyle, ViewStyle, Image, ImageProps } from 'react-native';
 import { Indicator } from '../activityIndicator/indicator';
 import { FontStyle } from '../../theme/fontStyle';
 import { COLORS } from '../../theme/colors';
+import { SvgProps } from 'react-native-svg';
 
 interface OpacityButtonProps {
-  text: string; // Text to display on the button
+  text?: string; // Text to display on the button
   onPress: () => void; // Function to call when the button is pressed
   isLoading?: boolean; // Loading state to show the Indicator
   disabled?: boolean; // Disabled state
   buttonStyle?: ViewStyle; // Custom button styles
   textStyle?: TextStyle; // Custom text styles
+  type?:'svg'|'image'|'text';
+  imageProps?: ImageProps;
+  svgProps?: SvgProps;
+  SvgIcon?:React.FC<SvgProps>
 }
 
 export const OpacityButton: React.FC<OpacityButtonProps> = ({
@@ -20,7 +25,23 @@ export const OpacityButton: React.FC<OpacityButtonProps> = ({
   disabled = false,
   buttonStyle,
   textStyle,
+  type='text',
+  imageProps,
+  svgProps,
+  SvgIcon
 }) => {
+
+  const renderChildComponent = useMemo(() => {
+    switch (type) {
+      case 'svg':
+        return SvgIcon && <SvgIcon {...svgProps} />;
+      case 'image':
+        return <Image {...imageProps} />;
+      default:
+        return <Text style={[styles.text, textStyle]}>{text}</Text>;
+    }
+  }, [type, svgProps, imageProps, text, textStyle]);
+
   return (
     <TouchableOpacity
       style={[styles.button, buttonStyle]}
@@ -30,9 +51,7 @@ export const OpacityButton: React.FC<OpacityButtonProps> = ({
     >
       {isLoading ? (
         <Indicator />
-      ) : (
-        <Text style={[styles.text, textStyle]}>{text}</Text>
-      )}
+      ) : (renderChildComponent)}
     </TouchableOpacity>
   );
 };

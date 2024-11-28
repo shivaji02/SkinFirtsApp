@@ -5,11 +5,13 @@ import React from 'react';
 import {logo} from '../../../assets/images/icons';
 import {OpacityButton} from '../../../components/button/opacityButton';
 import {COLORS} from '../../../theme/colors';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 
 export const WelcomeScreen = () => {
   const styles = useStyle();
 
   const [theme, setTheme] = useState(Appearance.getColorScheme());
+  const navigation = useNavigation<NavigationProp<string|any>>();
 
   useEffect(() => {
     const subscription = Appearance.addChangeListener(({colorScheme}) => {
@@ -37,13 +39,13 @@ export const WelcomeScreen = () => {
           <View style={styles.buttonsContainer}>
             <OpacityButton
               text={'Log In'}
-              onPress={() => console.log('Hello')}
+              onPress={() => navigation.navigate("login")}
               buttonStyle={styles.buttonStyle}
             //   textStyle={{color: theme==="dark"? COLORS.common.white: COLORS.common.black}}
             />
             <OpacityButton
               text={'Sign Up'}
-              onPress={() => console.log('Hello')}
+              onPress={() => navigation.navigate("signUp")}
               buttonStyle={styles.signUpStyle}
               textStyle={{color: COLORS.primary.main}}
             />

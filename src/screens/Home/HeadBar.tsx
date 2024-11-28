@@ -5,7 +5,7 @@ import { personalDetails } from '../../data/PersonalDetails';
 import { LeagueSpartanFont } from '../../theme/fontStyle';
 import { COLORS } from '../../theme/colors';
 import CustomIcon from '../../components/CustomIcon';
-
+import { scale,moderateScale,verticalScale } from '../../utils/responsiveUtils';
 
 import { NoticationBellIcon, SettingIcon } from '../../assets/svg/HomeScreensvg';
 const HeadBar = () => {
