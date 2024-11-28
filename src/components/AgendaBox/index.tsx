@@ -15,7 +15,7 @@ export const AgendaBox = ({ selectedDate }: AgendaBoxProps) => {
 
     if (appointmentsForDate.length === 0) {
         return (
-            <View style={styles.noAppContainer}>
+            <View style={[styles.noAppContainer, styles.Container]}>
                 <Text style={styles.noapp}>
                     No Appointments Available for today
                 </Text>
@@ -40,8 +40,12 @@ const styles = StyleSheet.create({
     Container: {
         flexDirection: 'row',
         justifyContent: 'center',
-        gap: '10',
-        shadowRadius: 20,
+         gap: '10',
+        // height:scale(1),
+        backgroundColor:COLORS.common.white,
+        // flex:0.2,
+        // marginTop:20,
+        // width:widthPercentageToDP(90),
     },
     time: {
         color: COLORS.primary.main,
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
 
     },
     noAppContainer: {
-        flex: 1,
+        // flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
