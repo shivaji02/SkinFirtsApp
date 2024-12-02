@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { View, Text, ScrollView, KeyboardAvoidingView} from 'react-native';
 import { useStyle } from './styles';
 import RNTextInput  from '../../../components/customTextInput';
@@ -6,6 +6,7 @@ import { BiometricIcon, Eye, EyeOff, FbIcon, GoogleIcon } from '../../../assets/
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { OpacityButton } from '../../../components/button/opacityButton';
 import Svg, { SvgProps } from 'react-native-svg';
+import { FormikProps } from 'formik';
 
 const LoginScreen = () => {
 
@@ -13,6 +14,11 @@ const LoginScreen = () => {
   const [isPassVissible, setPassVisible] = useState<boolean>(false);
   const navigation = useNavigation<NavigationProp<string|any>>();
   const loginOptions : React.FC<SvgProps>[] = [ GoogleIcon, FbIcon, BiometricIcon] ;
+  const initialValues = {
+    email: '', 
+    password: '' 
+  }
+  // const formikRef = useRef<FormikProps<any>>(null);
  
   type LoginOptionType = (typeof loginOptions)[number] ;
   
