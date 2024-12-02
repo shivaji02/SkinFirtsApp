@@ -18,6 +18,8 @@ const LoginScreen = () => {
     email: '', 
     password: '' 
   }
+
+  
   // const formikRef = useRef<FormikProps<any>>(null);
  
   type LoginOptionType = (typeof loginOptions)[number] ;
