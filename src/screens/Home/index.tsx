@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import HeadBar from './HeadBar';
 import IconBar from './IconBar';
@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: '#f5fcff',
+    position:'relative',
+    //backgroundColor: '#f5fcff',
   },
-  
 });
 
 export default HomeScreen;
