@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { FlatList, StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import {useDateUtilities} from '../../Hooks/getCalenderDays.ts/index.ts';
 import { heightPercentageToDP,scale,widthPercentageToDP,normalizeFontSize } from '../../utils/responsiveUtils.ts';
 import {LeagueSpartanFont} from '../../theme/fontStyle.tsx';
@@ -15,6 +15,7 @@ export const CalendarBox = ({ onSelectedDate }: CalendarBoxProps) => {
   const [selectedDate, setSelectedDate] = useState(calendarDays[1]?.date); // Default to today
 
   return (
+    // <View style={styles.parcon}>
     <FlatList
       horizontal
       data={calendarDays}
@@ -41,6 +42,7 @@ export const CalendarBox = ({ onSelectedDate }: CalendarBoxProps) => {
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.scrollContainer}
     />
+    
   );
 };
 
@@ -49,16 +51,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     gap:widthPercentageToDP(2),
  },
+ parcon:{
+  marginBottom:10,
+ },
  dayBox: {
-
    height:heightPercentageToDP(10),
    width: widthPercentageToDP(6),
    alignItems: 'center',
    justifyContent: 'center',
-   // padding: 10,
-   // marginHorizontal: 5,
+   marginHorizontal: 5,
    borderRadius: 18,
    backgroundColor:COLORS.common.white,
+   
 
  },
 

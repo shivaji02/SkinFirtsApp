@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import CustomIcon from '../../components/CustomIcon';
 import { StethIcon, FavIcon, SortBarIcon, SearchIcon } from '../../assets/svg/HomeScreensvg';
 import { scale,verticalScale,widthPercentageToDP,heightPercentageToDP } from '../../utils/responsiveUtils';
@@ -7,12 +8,15 @@ import SearchBar from '../../components/SearchBar';
 import { COLORS } from '../../theme/colors';
 // const width = Dimensions.get('window').width;
 const IconBar = () => {
+    const navigation = useNavigation();
     const handleDoc = (): void => {
+        navigation.navigate('DoctorsList')
         console.log("Doc press");
     };
     const handleFav = (): any =>{
         console.log("Fav press");
     }
+    
     return (
         <View style={styles.container}>
             <View style={styles.iconbox}>

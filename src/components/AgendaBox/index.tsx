@@ -24,9 +24,9 @@ export const AgendaBox = ({ selectedDate }: AgendaBoxProps) => {
     }
     console.log("AgendaBox.tsx result")
     return (
-        <View >
+        <View style={styles.parcon}>
             {appointmentsForDate.map((appointment, index) => (
-                <View key={index} style={styles.Container} >
+             <View key={index} style={styles.Container} >
                     <Text style={styles.time}>{appointment.time}</Text>
                     <Text style={styles.doctor}>{appointment.title}</Text>
                     <Text style={styles.desc}>{appointment.description}</Text>
@@ -40,12 +40,16 @@ const styles = StyleSheet.create({
     Container: {
         flexDirection: 'row',
         justifyContent: 'center',
-         gap: '10',
-        // height:scale(1),
-        backgroundColor:COLORS.common.white,
-        // flex:0.2,
-        // marginTop:20,
-        // width:widthPercentageToDP(90),
+        alignItems:'center',
+        alignSelf:'center',
+        gap: '10',
+        backgroundColor: COLORS.common.white,
+        borderRadius:20,
+        width:widthPercentageToDP(35),
+        padding:15,
+    },
+    parcon:{
+
     },
     time: {
         color: COLORS.primary.main,
