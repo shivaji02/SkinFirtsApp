@@ -19,6 +19,7 @@ export const HomeStack = ()=>{
                 backgroundColor: 'white',
                 },
                 animation: 'slide_from_right',
+                
             }
         }
 

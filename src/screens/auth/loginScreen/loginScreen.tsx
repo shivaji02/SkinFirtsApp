@@ -1,36 +1,70 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react';
-import { View, Text, ScrollView, KeyboardAvoidingView} from 'react-native';
-import { useStyle } from './styles';
-import RNTextInput  from '../../../components/customTextInput';
-import { BiometricIcon, Eye, EyeOff, FbIcon, GoogleIcon } from '../../../assets/svg/AuthScreenSvg';
-import { NavigationProp, useNavigation } from '@react-navigation/native';
-import { OpacityButton } from '../../../components/button/opacityButton';
-import Svg, { SvgProps } from 'react-native-svg';
-import { FormikProps } from 'formik';
+import React, {Fragment, useEffect, useRef, useState} from 'react';
+import {View, Text, ScrollView, KeyboardAvoidingView} from 'react-native';
+import {useStyle} from './styles';
+import RNTextInput from '../../../components/customTextInput';
+import {
+  BiometricIcon,
+  Eye,
+  EyeOff,
+  FbIcon,
+  GoogleIcon,
+} from '../../../assets/svg/AuthScreenSvg';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {OpacityButton} from '../../../components/button/opacityButton';
+import {SvgProps} from 'react-native-svg';
+import * as Yup from 'yup';
+import {Credentials, LoginOptionType} from '../../../types/login';
 
 const LoginScreen = () => {
-
   const styles = useStyle();
   const [isPassVissible, setPassVisible] = useState<boolean>(false);
-  const navigation = useNavigation<NavigationProp<string|any>>();
-  const loginOptions : React.FC<SvgProps>[] = [ GoogleIcon, FbIcon, BiometricIcon] ;
-  const initialValues = {
-    email: '', 
-    password: '' 
+  const navigation = useNavigation<NavigationProp<string | any>>();
+  const loginOptions: LoginOptionType[] = [GoogleIcon, FbIcon, BiometricIcon];
+  const [error, setErrors] = useState<Credentials>({
+    email:'',
+    password:''
+  });
+
+  const [formValues, setFormValues] = useState<Credentials>({
+    email:'',
+    password:''
+  })
+
+  const handleSetValues =(type : 'error'|'formValues',value : string, label : string)=>{
+    type === 'error' ? setErrors({...error,[label]:value}) : setFormValues({...formValues,[label]:value});
   }
 
-  
+  // const initialValues 
   // const formikRef = useRef<FormikProps<any>>(null);
- 
-  type LoginOptionType = (typeof loginOptions)[number] ;
-  
-  useEffect(()=>{
-    console.log("HELLO from LoginScreen.tsx");
-  },[])
 
-  const handleEyeClick= () => {
-      setPassVisible(!isPassVissible);
-  }
+  const createYupSchema = <T extends Object>(
+    schema: Yup.ObjectSchema<T>,
+  ): Yup.ObjectSchema<T> => schema;
+
+  // const credentialsSchema = createYupSchema<Credentials>(
+  //   Yup.object().shape({
+  //     email: Yup.string().email('Invalid email format').required('Email is required'),
+  //     password :  Yup.string().email('Invalid email format').required('Email is required')
+  //   })
+  // );
+
+  const credentialsSchema = createYupSchema<Credentials>(
+    Yup.object().shape({
+      email: Yup.string()
+        .email('Invalid email format')
+        .required('Email is required'),
+      password: Yup.string()
+        .required('Password is required'),
+    }),
+  );
+
+  useEffect(() => {
+    console.log('HELLO from LoginScreen.tsx');
+  }, []);
+
+  const handleEyeClick = () => {
+    setPassVisible(!isPassVissible);
+  };
 
   const handleLoginOptions = (loginType: LoginOptionType) => {
     switch (loginType) {
@@ -46,55 +80,83 @@ const LoginScreen = () => {
     }
   };
 
+  const handleLoginButton = async() =>{
+    try {
+      await credentialsSchema.validate(formValues,{abortEarly:false});
+      console.log(formValues,"DATA")
+      setErrors({email:'',password:''})
+    } catch (error) {
+      console.log(error,"ERROR")
+    }
+  }
+
   return (
     <Fragment>
-        <KeyboardAvoidingView style={{ flexGrow: 1, }} behavior={"padding"}>
-    <ScrollView contentContainerStyle={styles.flexContainer} >
-      <Text style={styles.subHeaderText}>Welcome</Text>
-      <View style={styles.fieldsContainer}>
-       <RNTextInput
-       label='Email or Mobile Number'
-       placeholder='Enter your Email here'
-      //  SvgIcon={EyeOff}
-       />
-       <RNTextInput
-       label='Password'
-       placeholder='Enter your Password here'
-       secureTextEntry={!isPassVissible}
-       SvgIcon={isPassVissible?Eye:EyeOff}
-       onIconPress={handleEyeClick}
-       />
-      </View>
-      <Text style={styles.utilText} onPress={()=>navigation.navigate('setPassword')}>Forgot Password</Text>
-      <View style={styles.loginContainer}>
-      <OpacityButton
-              text={'Log In'}
-              onPress={() => navigation.navigate("login")}
-              buttonStyle={styles.buttonStyle}
-            //   textStyle={{color: theme==="dark"? COLORS.common.white: COLORS.common.black}}
+      <KeyboardAvoidingView style={{flexGrow: 1}} behavior={'padding'}>
+        <ScrollView contentContainerStyle={styles.flexContainer}>
+          <Text style={styles.subHeaderText}>Welcome</Text>
+          <View style={styles.fieldsContainer}>
+            <RNTextInput
+              label="Email or Mobile Number"
+              placeholder="Enter your Email here"
+              value={formValues.email}
+              error={error.email}
+              onChangeText={(text)=>handleSetValues('formValues',text,'email')}
+              // onChange={(e)=>
+
+              // }
+              //  SvgIcon={EyeOff}
             />
-            <Text style={styles.infoText}>
-            or sign up with
-          </Text>
-          <View style={styles.loginUtil}>
-          {loginOptions.map((loginType,index)=>{
-             return <OpacityButton
-                       onPress={() => handleLoginOptions(loginType)} 
-                       type='svg'
-                       SvgIcon={loginType} 
-                       key={index}
-                      //  svgProps={{width:24,height:24}}
-                       buttonStyle={styles.roundButton}/>
-             })  
-            }
+            <RNTextInput
+              label="Password"
+              placeholder="Enter your Password here"
+              secureTextEntry={!isPassVissible}
+              value={formValues.password}
+              error={error.password}
+              onChangeText={(text)=>handleSetValues('formValues',text,'password')}
+              SvgIcon={isPassVissible ? Eye : EyeOff}
+              onIconPress={handleEyeClick}
+            />
           </View>
-        </View>
-        <Text style={styles.infoText}>
-        Don’t have an account? <Text style={styles.utilText} onPress={()=>navigation.navigate('signUp')}>Sign Up</Text>
+          <Text
+            style={styles.utilText}
+            onPress={() => navigation.navigate('setPassword')}>
+            Forgot Password
           </Text>
-    </ScrollView>
-    </KeyboardAvoidingView>
-   </Fragment>
+          <View style={styles.loginContainer}>
+            <OpacityButton
+              text={'Log In'}
+              onPress={() => handleLoginButton()}
+              buttonStyle={styles.buttonStyle}
+              //   textStyle={{color: theme==="dark"? COLORS.common.white: COLORS.common.black}}
+            />
+            <Text style={styles.infoText}>or sign up with</Text>
+            <View style={styles.loginUtil}>
+              {loginOptions.map((loginType, index) => {
+                return (
+                  <OpacityButton
+                    onPress={() => handleLoginOptions(loginType)}
+                    type="svg"
+                    SvgIcon={loginType}
+                    key={index}
+                    //  svgProps={{width:24,height:24}}
+                    buttonStyle={styles.roundButton}
+                  />
+                );
+              })}
+            </View>
+          </View>
+          <Text style={styles.infoText}>
+            Don’t have an account?{' '}
+            <Text
+              style={styles.utilText}
+              onPress={() => navigation.navigate('signUp')}>
+              Sign Up
+            </Text>
+          </Text>
+        </ScrollView>
+      </KeyboardAvoidingView>
+    </Fragment>
   );
 };
 

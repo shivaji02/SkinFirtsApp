@@ -8,12 +8,15 @@ import { SignUpScreen } from '../../screens/auth/signUp/signUpScreen';
 import { COLORS } from '../../theme/colors';
 import { WelcomeScreen } from '../../screens/auth/welcomeScreen/welcomeScreen';
 import { FontStyle } from '../../theme/fontStyle';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import HeadBack from '../../components/Goback';
 
 
 const Stack = createNativeStackNavigator();
 
 export const AuthStack = () => {
-{console.log('AuthStack.tsx')};
+
+  const navigation = useNavigation<NavigationProp<any>>();
   const [theme, setTheme] = useState(Appearance.getColorScheme());
 
   useEffect(() => {
@@ -42,7 +45,10 @@ export const AuthStack = () => {
       animation: 'slide_from_right',
       headerTintColor : COLORS.primary.main,
       headerShadowVisible : false,
-      headerTitleAlign:'center'
+      headerTitleAlign:'center',
+      // headerLeft: () => (
+      //   <HeadBack title={'Doctor List'} showIcon={false} />
+      // )
     }}>
       <Stack.Screen name={'welcome'} component={WelcomeScreen} options={{headerShown:false}} />
       <Stack.Screen name={'login'} component={LoginScreen} options={{title:"Log In"}} />
