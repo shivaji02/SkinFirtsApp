@@ -1,4 +1,10 @@
-[
+const olivia = require('../../assets/png/doctors/olivia.png');
+const mikal = require('../../assets/png/doctors/mikal.png')
+const sophia = require('../../assets/png/doctors/sophia.png')
+const alexander = require('../../assets/png/doctors/alexander.png')
+
+
+export const doctorsdata = [
     {
       'id': 1,
       'name': 'Dr. Olivia Turner',
@@ -7,7 +13,7 @@
       'rating': 5,
       'reviews': 60,
       'isFav': false,
-      'profileImage': 'https://example.com/olivia.jpg',
+      'profileImage': olivia,
     },
     {
       'id': 2,
@@ -17,7 +23,7 @@
       'rating': 4.5,
       'reviews': 40,
       'isFav': false,
-      'profileImage': 'https://example.com/alexander.jpg',
+      'profileImage': alexander,
     },
     {
       'id': 3,
@@ -27,7 +33,7 @@
       'rating': 5,
       'reviews': 150,
       'isFav': false,
-      'profileImage': 'https://example.com/sophia.jpg',
+      'profileImage': sophia,
     },
     {
       'id': 4,
@@ -37,6 +43,6 @@
       'rating': 4.8,
       'reviews': 90,
       'isFav': false,
-      'profileImage': 'https://example.com/michael.jpg',
+      'profileImage': mikal,
     },
   ];
