@@ -1,31 +1,24 @@
-import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, Platform } from 'react-native';
 import React, { useState } from 'react';
 import HeadBack from '../../components/Goback';
 import { doctorsdata } from '../../data/doctors';
 import CustomIcon from '../../components/CustomIcon';
 import CustomImage from '../../components/CustomImage';
-import {actFav,
-        acta2z,
-        actfm,
-        actm,
-        actstar,
-        inactFav,
-        inacta2z,
-        inactfm,
-        inactm,
-        inactstar,} from '../../assets/png/doctors/index'
+import { actFav, acta2z, actfm, actm, actstar, inactFav, inacta2z, inactfm, inactm, inactstar } from '../../assets/png/doctors/index'
 
 import { NavigationProp } from '@react-navigation/native';
 import { COLORS } from '../../theme/colors';
+import { heightPercentageToDP, scale, widthPercentageToDP } from '../../utils/responsiveUtils';
 
 interface DoctorsListProps {
     navigation: NavigationProp<any>;
 }
 
+
 const getActiveIcon = (filterType) => {
     switch (filterType) {
         case 'A-Z': return acta2z;
-        case 'Star' : return actstar;
+        case 'Star': return actstar;
         case 'Male': return actm;
         case 'Female': return actfm;
         case 'Fav': return actFav;
@@ -36,7 +29,7 @@ const getActiveIcon = (filterType) => {
 const getInactiveIcon = (filterType) => {
     switch (filterType) {
         case 'A-Z': return inacta2z;
-        case 'Star' : return inactstar;
+        case 'Star': return inactstar;
         case 'Male': return inactm;
         case 'Female': return inactfm;
         case 'Fav': return inactFav;
@@ -48,89 +41,91 @@ export const DoctorsList = ({ navigation }: DoctorsListProps) => {
 
     const [doctors, setDoctors] = useState(doctorsdata);
     const [filter, setFilter] = useState('All');
-    const [isAsc,setIsAsc] = useState(true);
+    const [isAsc, setIsAsc] = useState(true);
     // console.log(doctorsdata, 'DoctorList.tsx rendered ');
     const filteredDoctors = doctors
-    .filter((doctor) => {
-        if (filter === 'A-Z') {return true;}
-        if(filter === 'Star') {return doctor.rating === 5;}
-        if (filter === 'Male') {return doctor.gender === 'Male';}
-        if (filter === 'Female') {return doctor.gender === 'Female';}
-        if (filter === 'Fav') {return doctor.isFav;}
-        return true;
-    }).sort((a,b) =>{
-        if(filter === 'A-Z'){
-            const nameA =  a.name.toLowerCase();
-            const nameB = b.name.toLowerCase();
-            return isAsc  ? nameA.localeCompare(nameB):nameB.localeCompare(nameA);
-        }
-        return 0;
-    });
+        .filter((doctor) => {
+            if (filter === 'A-Z') { return true; }
+            if (filter === 'Star') { return doctor.rating === 5; }
+            if (filter === 'Male') { return doctor.gender === 'Male'; }
+            if (filter === 'Female') { return doctor.gender === 'Female'; }
+            if (filter === 'Fav') { return doctor.isFav; }
+            return true;
+        }).sort((a, b) => {
+            if (filter === 'A-Z') {
+                const nameA = a.name.toLowerCase();
+                const nameB = b.name.toLowerCase();
+                return isAsc ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+            }
+            return 0;
+        });
+
 
     const toggleFavorite = (id) => {
-        const updateDoctors = doctors.map((doctor) => 
+        const updateDoctors = doctors.map((doctor) =>
             doctor.id === id ? { ...doctor, isFav: !doctor.isFav } : doctor
         );
         setDoctors(updateDoctors);
     };
 
-    const handleAZSort =()=>{
+    const handleAZSort = () => {
         setFilter('A-Z');
         setIsAsc(!isAsc);
     };
 
-    // const renderFilterIcon = (filterType)=> {
-    //     const Icon = filter === filterType ? getActiveIcon(filterType): getInactiveIcon(filterType);
-    //     return <Icon width={24} height={24} fill={filter=== filterType ? COLORS.primary.main : COLORS.common.modal}/>;
-    // };
-
     return (
         <View style={styles.container}>
-            <HeadBack title={'Doctor List'} showIcon={false} />
+            {/* <HeadBack title={'Doctor List'} showIcon={false} /> */}
 
             {/* filterbar */}
             <View style={styles.filterBar}>
-                {['All','Star','Fav','Female','Male'].map((filterType) =>(
-                    <CustomIcon 
+                <CustomIcon
+                    IconComponent={isAsc ? acta2z : inacta2z}
+                    size={50}
+                    style={StyleSheet.flatten([styles.a2z, styles.iconContainer])}
+                    onPress={handleAZSort}
+                    //text={isAsc ? 'A-Z' : 'Z-A'}
+                    backgroundColor={filter === 'A-Z' ? COLORS.primary.main : COLORS.primary[300]}
+                    iconColor={filter === 'A-Z' ? COLORS.common.black : COLORS.primary[300]}
+                />
+                {['Star', 'Fav', 'Female', 'Male'].map((filterType) => (
+                    <CustomIcon
                         key={filterType}
                         IconComponent={
-                            filter === filterType ?  
-                            getInactiveIcon(filterType) : 
-                            getActiveIcon(filterType)                     }
-                            size={24}
-                            onPress={()=>setFilter(filterType)}
-                            backgroundColor={filterType ? COLORS.primary.main : COLORS.primary[300]}
-                            iconColor={filter === 'A-Z' ? COLORS.common.white :  COLORS.primary.main}
-                            />
-))}
-<CustomIcon
-    IconComponent={isAsc ? acta2z : inacta2z}
-    size={24}
-    onPress={handleAZSort}
-    text={isAsc ? 'A-Z' : 'Z-A'}
-    backgroundColor={filter  === 'A-Z' ? COLORS.primary.main : COLORS.common.white}
-    iconColor= {filter=== 'A-Z' ? COLORS.common.white : COLORS.primary[300] }
-    />
+                            filter === filterType ?
+                                getActiveIcon(filterType) :
+                                getInactiveIcon(filterType)
+                        }
+                        size={24}
+                        onPress={() => setFilter(filterType)}
+                        backgroundColor={filter === filterType ? COLORS.primary.main : COLORS.primary[300]}
+                     iconColor={filter === filterType ? COLORS.common.black : COLORS.primary[300]}
+                     style={styles.iconContainer}
+                    />
+                ))}
             </View>
-                <FlatList
-                    data={filteredDoctors}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) => (
-                        <TouchableOpacity
-                            style={styles.docCard}
-                            onPress={() => navigation.navigate('DoctorInfo', { doctor: item })}
-                        >
-                            <CustomImage source={item.profileImage} style={styles.proImg}  borderRadius={30}/>
+            <FlatList
+                data={filteredDoctors}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => (
+                    <TouchableOpacity
+                        style={styles.docCard}
+                        onPress={() => navigation.navigate('DoctorInfo', { doctor: item })}
+                    >
+                        <CustomImage source={item.profileImage} style={styles.proImg}  borderRadius={30} />
+                        <View style={styles.doctc}>
                             <Text>{item.name}</Text>
                             <Text>{item.specialty}</Text>
                             <Text>*{item.rating} | {item.reviews}</Text>
                             <TouchableOpacity onPress={() => toggleFavorite(item.id)}>
                                 <Text>{item.isFav ? '❤️' : '🤍'}</Text>
                             </TouchableOpacity>
-                        </TouchableOpacity>
-                    )}
-                />
-            </View>
+                        </View>
+
+                    </TouchableOpacity>
+                )}
+            />
+        </View>
     );
 };
 
@@ -138,37 +133,59 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: '#f8f8f8',
     },
-    filterBar:{
-        flexDirection:'row',
-        gap:10,
+    filterBar: {
+        flexDirection: 'row',
+        gap: 5,
+    },
+    a2z: {
+        height: heightPercentageToDP(5),
+        width: widthPercentageToDP(8),
+        // padding:5,
+        paddingTop:  scale(-35),
     },
     filterButton: {
         flexDirection: 'row',
         alignItems: 'center',
         marginVertical: 5,
     },
+    iconContainer:{
+        alignItems:'center',
+        height: heightPercentageToDP(5),
+        padding:5,
+    },
     activeFilterText: {
         fontSize: 16,
-        color: '#000',
         marginLeft: 5,
     },
     inactiveFilterText: {
         fontSize: 16,
-        color: '#ccc',
-        marginLeft: 5,},
+        marginLeft: 5,
+    },
     icon: {
         width: 24,
         height: 24,
     },
     docCard: {
+        flexDirection: 'row',
         fontSize: 18,
         marginVertical: 10,
-        color: '#333',
+        gap: 20,
+        backgroundColor: COLORS.primary[300],
+        borderRadius: 10,
+        height:heightPercentageToDP(15),
+    },
+    doctc: {
+        justifyContent: 'center',
     },
     proImg: {
-
+        justifyContent:'center',
+        alignContent:'flex-start',
+        alignItems:'center',
+        height:heightPercentageToDP(10),
+        width:widthPercentageToDP(10),
+        paddingLeft: Platform.OS === 'android' ? 25 : 10,
+        // padding:10,
     },
 });
 

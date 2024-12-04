@@ -42,7 +42,7 @@ export const doctorsdata = [
       'specialty': 'Nano-Dermatology',
       'rating': 4.8,
       'reviews': 90,
-      'isFav': false,
+      'isFav': true,
       'profileImage': mikal,
     },
   ];
