@@ -10,12 +10,13 @@ import { COLORS } from '../../theme/colors';
 const IconBar = () => {
     const navigation = useNavigation();
     const handleDoc = (): void => {
-        navigation.navigate('DoctorsList')
+        navigation.navigate('DoctorsList', { filte: 'All' })
         console.log("Doc press");
     };
-    const handleFav = (): any =>{
+    const handleFav = (): void => {
         console.log("Fav press");
-    }
+        navigation.navigate('DoctorsList', { filte: 'Fav' });
+    };
     
     return (
         <View style={styles.container}>

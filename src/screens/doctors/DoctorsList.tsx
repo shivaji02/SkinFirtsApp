@@ -1,21 +1,25 @@
 import { View, Text, StyleSheet, TouchableOpacity, FlatList, Platform } from 'react-native';
 import React, { useState } from 'react';
-import HeadBack from '../../components/Goback';
 import { doctorsdata } from '../../data/doctors';
 import CustomIcon from '../../components/CustomIcon';
 import CustomImage from '../../components/CustomImage';
 import { actFav, acta2z, actfm, actm, actstar, inactFav, inacta2z, inactfm, inactm, inactstar } from '../../assets/png/doctors/index'
-
 import { NavigationProp } from '@react-navigation/native';
 import { COLORS } from '../../theme/colors';
 import { heightPercentageToDP, scale, widthPercentageToDP } from '../../utils/responsiveUtils';
+import { DoctorT } from '../../types';
+import { useRoute } from '@react-navigation/native';
 
 interface DoctorsListProps {
     navigation: NavigationProp<any>;
 }
 
 
-const getActiveIcon = (filterType) => {
+interface IconProps {
+    filterType: string;
+}
+
+const getActiveIcon = ({ filterType }: IconProps): any => {
     switch (filterType) {
         case 'A-Z': return acta2z;
         case 'Star': return actstar;
@@ -26,7 +30,11 @@ const getActiveIcon = (filterType) => {
     }
 };
 
-const getInactiveIcon = (filterType) => {
+interface InactiveIconProps {
+    filterType: string;
+}
+
+const getInactiveIcon = ({ filterType }: InactiveIconProps): any => {
     switch (filterType) {
         case 'A-Z': return inacta2z;
         case 'Star': return inactstar;
@@ -37,10 +45,12 @@ const getInactiveIcon = (filterType) => {
     }
 };
 
-export const DoctorsList = ({ navigation }: DoctorsListProps) => {
-
+export const DoctorsList = ({ navigation}: DoctorsListProps) => {
+    const  route=useRoute();
+     const{filte}=route?.params;
+ 
     const [doctors, setDoctors] = useState(doctorsdata);
-    const [filter, setFilter] = useState('All');
+    const [filter, setFilter] = useState(filte);
     const [isAsc, setIsAsc] = useState(true);
     // console.log(doctorsdata, 'DoctorList.tsx rendered ');
     const filteredDoctors = doctors
@@ -61,8 +71,8 @@ export const DoctorsList = ({ navigation }: DoctorsListProps) => {
         });
 
 
-    const toggleFavorite = (id) => {
-        const updateDoctors = doctors.map((doctor) =>
+    const toggleFavorite = (id: number) => {
+        const updateDoctors = doctors.map((doctor: DoctorT) =>
             doctor.id === id ? { ...doctor, isFav: !doctor.isFav } : doctor
         );
         setDoctors(updateDoctors);
@@ -93,8 +103,8 @@ export const DoctorsList = ({ navigation }: DoctorsListProps) => {
                         key={filterType}
                         IconComponent={
                             filter === filterType ?
-                                getActiveIcon(filterType) :
-                                getInactiveIcon(filterType)
+                                getActiveIcon({ filterType }) :
+                                getInactiveIcon({ filterType })
                         }
                         size={24}
                         onPress={() => setFilter(filterType)}
