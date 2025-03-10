@@ -10,11 +10,11 @@ import { Appearance, StyleSheet, View } from 'react-native';
 import CustomIcon from '../../components/CustomIcon';
 import { SearchIcon, SortBarIcon } from '../../assets/svg/HomeScreensvg';
 import { scale } from '../../utils/responsiveUtils';
-
+import ChatBot  from '../../screens/Home/ChatBot';
 const HeaderRight = () => (
     <View style={styles.headerRightI}>
         <CustomIcon IconComponent={SearchIcon} size={24} backgroundColor={COLORS.primary[300]} style={styles.icon}/>
-        <CustomIcon IconComponent={SortBarIcon} size={24} backgroundColor={COLORS.primary[300]}style={styles.icon}/>
+        {/* <CustomIcon IconComponent={SortBarIcon} size={24} backgroundColor={COLORS.primary[300]}style={styles.icon}/> */}
     </View>
 );
 
@@ -63,6 +63,7 @@ export const HomeStack = () => {
             <Stack.Screen name="DoctorInfo">
                 {(props) => <DoctorInfo route={props.route as DoctorInfoRouteProp} />}
             </Stack.Screen>
+            <Stack.Screen name="ChatBot" component={ChatBot} />
             {/* <Stack.Screen name={"TestScreen"} component={TestScreen}/> */}
         </Stack.Navigator>
     );

@@ -46,8 +46,12 @@ const getInactiveIcon = ({ filterType }: InactiveIconProps): any => {
 };
 
 export const DoctorsList = ({ navigation}: DoctorsListProps) => {
-    const  route=useRoute();
+
+    const  route = useRoute();
+
      const{filte}=route?.params;
+
+    //  console.log('jello',filte);
  
     const [doctors, setDoctors] = useState(doctorsdata);
     const [filter, setFilter] = useState(filte);

@@ -42,9 +42,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 10,
     marginLeft: -40,
-    ...(Platform.OS === 'ios' &&  {
-        marginTop: 45, // Apply marginTop only for iOS 10
-      }),
+    // ...(Platform.OS === 'ios' &&  {
+    //     marginTop: 45, // Apply marginTop only for iOS 10
+    //   }),
     },
   image: {
     // left: 10,
