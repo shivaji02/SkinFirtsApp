@@ -11,12 +11,20 @@ import CustomIcon from '../../components/CustomIcon';
 import { SearchIcon, SortBarIcon } from '../../assets/svg/HomeScreensvg';
 import { scale } from '../../utils/responsiveUtils';
 import ChatBot  from '../../screens/Home/ChatBot';
+import ProductScreen from '../../screens/Home/ProductScreen';
 const HeaderRight = () => (
     <View style={styles.headerRightI}>
         <CustomIcon IconComponent={SearchIcon} size={24} backgroundColor={COLORS.primary[300]} style={styles.icon}/>
         {/* <CustomIcon IconComponent={SortBarIcon} size={24} backgroundColor={COLORS.primary[300]}style={styles.icon}/> */}
     </View>
 );
+
+type HomeStackParamList = {
+    HomeScreen: undefined;
+    DoctorsList: { filter: string };
+    DoctorInfo: { doctor: any };
+    ChatBot: undefined;
+};
 
 export const HomeStack = () => {
     const Stack = createNativeStackNavigator();
@@ -59,12 +67,12 @@ export const HomeStack = () => {
             }}
         >
             <Stack.Screen name={'HomeScreen'} options={{ headerShown: false }} component={HomeScreen} />
-            <Stack.Screen name="DoctorsList" component={DoctorsList} />
+            <Stack.Screen name="DoctorsList"  component={DoctorsList} />
             <Stack.Screen name="DoctorInfo">
                 {(props) => <DoctorInfo route={props.route as DoctorInfoRouteProp} />}
             </Stack.Screen>
             <Stack.Screen name="ChatBot" component={ChatBot} />
-            {/* <Stack.Screen name={"TestScreen"} component={TestScreen}/> */}
+            <Stack.Screen name ="Products" component={ProductScreen}/>
         </Stack.Navigator>
     );
 };

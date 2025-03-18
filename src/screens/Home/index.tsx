@@ -1,5 +1,5 @@
 import React from 'react';
-import {  StyleSheet,SafeAreaView } from 'react-native';
+import {  StyleSheet,SafeAreaView, Platform } from 'react-native';
 import HeadBar from './HeadBar';
 import IconBar from './IconBar';
 import CalAgend from './CalAgend';
@@ -15,7 +15,7 @@ const HomeScreen = () => {
       <HeadBar />
       <IconBar />
       <CalAgend/>
-      <ChatBot/>
+      {/* <ChatBot/> */}
      </SafeAreaView>
 
   );
@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position:'relative',
     //backgroundColor: '#f5fcff',
+    // marginTop: Platform.OS === 'ios' ? -15 : 0,
+    // marginBottom: Platform.OS === 'ios' ? 10 : 0,
   },
 });
 
