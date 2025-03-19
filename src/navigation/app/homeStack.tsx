@@ -11,7 +11,8 @@ import CustomIcon from '../../components/CustomIcon';
 import { SearchIcon, SortBarIcon } from '../../assets/svg/HomeScreensvg';
 import { scale } from '../../utils/responsiveUtils';
 import ChatBot  from '../../screens/Home/ChatBot';
-import ProductScreen from '../../screens/Home/ProductScreen';
+import ProductScreen from '../../screens/ecom/ProductScreen';
+import ProductDetail from '../../screens/ecom/ProductDetail';
 const HeaderRight = () => (
     <View style={styles.headerRightI}>
         <CustomIcon IconComponent={SearchIcon} size={24} backgroundColor={COLORS.primary[300]} style={styles.icon}/>
@@ -73,6 +74,7 @@ export const HomeStack = () => {
             </Stack.Screen>
             <Stack.Screen name="ChatBot" component={ChatBot} />
             <Stack.Screen name ="Products" component={ProductScreen}/>
+            <Stack.Screen name="ProductDetail" component={ProductDetail}/>
         </Stack.Navigator>
     );
 };
