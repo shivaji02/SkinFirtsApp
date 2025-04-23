@@ -1,4 +1,5 @@
 {
     "notebook.defaultFormatter": "GitHub.copilot",
-    "java.compile.nullAnalysis.mode": "disabled"
+    "java.compile.nullAnalysis.mode": "disabled",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

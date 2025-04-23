@@ -143,4 +143,12 @@ export     interface DoctorT {
   reviews: number;
   gender: string;
   isFav: boolean;
+  location: string;
+  experience: number;
+  languages: string[];
+  hospital: string;
+  contact: {
+    phone: string;
+  };
+  description: string;
 }

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { doctorsdata } from '../../data/doctors';
 import CustomIcon from '../../components/CustomIcon';
 import CustomImage from '../../components/CustomImage';
-import { actFav, acta2z, actfm, actm, actstar, inactFav, inacta2z, inactfm, inactm, inactstar } from '../../assets/png/doctors/index'
+import { actFav, acta2z, actfm, actm, actstar, inactFav, inacta2z, inactfm, inactm, inactstar } from '../../assets/png/doctors/index';
 import { NavigationProp } from '@react-navigation/native';
 import { COLORS } from '../../theme/colors';
 import { heightPercentageToDP, scale, widthPercentageToDP } from '../../utils/responsiveUtils';
@@ -49,12 +49,12 @@ export const DoctorsList = ({ navigation}: DoctorsListProps) => {
 
     const  route = useRoute();
 
-     const{filte}=route?.params;
+     const { filter: initialFilter } = route.params as { filter: string };
 
     //  console.log('jello',filte);
- 
+
     const [doctors, setDoctors] = useState(doctorsdata);
-    const [filter, setFilter] = useState(filte);
+    const [filter, setFilter] = useState(initialFilter);
     const [isAsc, setIsAsc] = useState(true);
     // console.log(doctorsdata, 'DoctorList.tsx rendered ');
     const filteredDoctors = doctors
@@ -150,7 +150,8 @@ const styles = StyleSheet.create({
     },
     filterBar: {
         flexDirection: 'row',
-        gap: 5,
+        gap: scale(10),
+        bottom: scale(10),
     },
     a2z: {
         height: heightPercentageToDP(5),
@@ -188,6 +189,8 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.primary[300],
         borderRadius: 10,
         height:heightPercentageToDP(15),
+        marginBottom: 10,
+        padding: 10,
     },
     doctc: {
         justifyContent: 'center',

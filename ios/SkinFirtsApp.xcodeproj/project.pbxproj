@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SkinFirtsAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SkinFirtsAppTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-SkinFirtsApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-SkinFirtsApp.a */; };
+		0B48D2BB6DF81B2705BD136C /* libPods-SkinFirtsApp-SkinFirtsAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 262CBC1DE08A4F0D2182DDB1 /* libPods-SkinFirtsApp-SkinFirtsAppTests.a */; };
+		0FF2D298CCC47688FCD8E6DB /* libPods-SkinFirtsApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B3D72422723B46809A6852 /* libPods-SkinFirtsApp.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -16,7 +17,6 @@
 		68D9655477BCE0835F71EBC9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		70F73F89AC254F769E1776A9 /* LeagueSpartan-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073448265DC42999FC2EA10 /* LeagueSpartan-Bold.ttf */; };
 		71B4B34E3196452DBEAFB279 /* LeagueSpartan-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 497E3261066545F5813306DF /* LeagueSpartan-SemiBold.ttf */; };
-		7699B88040F8A987B510C191 /* libPods-SkinFirtsApp-SkinFirtsAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SkinFirtsApp-SkinFirtsAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B1D9A104712E40D09E4A38C0 /* LeagueSpartan-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B768B3AF68A48A997824768 /* LeagueSpartan-Regular.ttf */; };
 		B29B6278AF184F348EA392B2 /* LeagueSpartan-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAEFE0B153484CBC9D0B4B1D /* LeagueSpartan-Thin.ttf */; };
@@ -40,7 +40,7 @@
 		00E356EE1AD99517003FC87E /* SkinFirtsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinFirtsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SkinFirtsAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinFirtsAppTests.m; sourceTree = "<group>"; };
-		0BDB80462B9B459E9EC69920 /* LeagueSpartan-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Light.ttf"; path = "../src/assets/fonts/LeagueSpartan-Light.ttf"; sourceTree = "<group>"; };
+		0BDB80462B9B459E9EC69920 /* LeagueSpartan-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Light.ttf"; path = "../src/assets/fonts/LeagueSpartan-Light.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SkinFirtsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinFirtsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SkinFirtsApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = SkinFirtsApp/AppDelegate.mm; sourceTree = "<group>"; };
@@ -48,21 +48,21 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SkinFirtsApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SkinFirtsApp/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = SkinFirtsApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		164E44EDEE204CF19D519440 /* LeagueSpartan-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Black.ttf"; path = "../src/assets/fonts/LeagueSpartan-Black.ttf"; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-SkinFirtsApp-SkinFirtsAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinFirtsApp-SkinFirtsAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-SkinFirtsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinFirtsApp.debug.xcconfig"; path = "Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp.debug.xcconfig"; sourceTree = "<group>"; };
-		42F4361C970145488A5A8B0E /* LeagueSpartan-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Medium.ttf"; path = "../src/assets/fonts/LeagueSpartan-Medium.ttf"; sourceTree = "<group>"; };
-		497E3261066545F5813306DF /* LeagueSpartan-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-SemiBold.ttf"; path = "../src/assets/fonts/LeagueSpartan-SemiBold.ttf"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-SkinFirtsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinFirtsApp.release.xcconfig"; path = "Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-SkinFirtsApp-SkinFirtsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinFirtsApp-SkinFirtsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SkinFirtsApp-SkinFirtsAppTests/Pods-SkinFirtsApp-SkinFirtsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-SkinFirtsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinFirtsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		73AC4C9D079246A7A0524C01 /* LeagueSpartan-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-ExtraBold.ttf"; path = "../src/assets/fonts/LeagueSpartan-ExtraBold.ttf"; sourceTree = "<group>"; };
-		8073448265DC42999FC2EA10 /* LeagueSpartan-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Bold.ttf"; path = "../src/assets/fonts/LeagueSpartan-Bold.ttf"; sourceTree = "<group>"; };
+		164E44EDEE204CF19D519440 /* LeagueSpartan-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Black.ttf"; path = "../src/assets/fonts/LeagueSpartan-Black.ttf"; sourceTree = "<group>"; };
+		262CBC1DE08A4F0D2182DDB1 /* libPods-SkinFirtsApp-SkinFirtsAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinFirtsApp-SkinFirtsAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F4361C970145488A5A8B0E /* LeagueSpartan-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Medium.ttf"; path = "../src/assets/fonts/LeagueSpartan-Medium.ttf"; sourceTree = "<group>"; };
+		497E3261066545F5813306DF /* LeagueSpartan-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-SemiBold.ttf"; path = "../src/assets/fonts/LeagueSpartan-SemiBold.ttf"; sourceTree = "<group>"; };
+		70B3D72422723B46809A6852 /* libPods-SkinFirtsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinFirtsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		719383995B609B1466BFD21F /* Pods-SkinFirtsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinFirtsApp.release.xcconfig"; path = "Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp.release.xcconfig"; sourceTree = "<group>"; };
+		73AC4C9D079246A7A0524C01 /* LeagueSpartan-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-ExtraBold.ttf"; path = "../src/assets/fonts/LeagueSpartan-ExtraBold.ttf"; sourceTree = "<group>"; };
+		8073448265DC42999FC2EA10 /* LeagueSpartan-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Bold.ttf"; path = "../src/assets/fonts/LeagueSpartan-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SkinFirtsApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-SkinFirtsApp-SkinFirtsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinFirtsApp-SkinFirtsAppTests.release.xcconfig"; path = "Target Support Files/Pods-SkinFirtsApp-SkinFirtsAppTests/Pods-SkinFirtsApp-SkinFirtsAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		8B768B3AF68A48A997824768 /* LeagueSpartan-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Regular.ttf"; path = "../src/assets/fonts/LeagueSpartan-Regular.ttf"; sourceTree = "<group>"; };
-		CAEFE0B153484CBC9D0B4B1D /* LeagueSpartan-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Thin.ttf"; path = "../src/assets/fonts/LeagueSpartan-Thin.ttf"; sourceTree = "<group>"; };
-		CFD629C12F1F4A84A811AD2D /* LeagueSpartan-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-ExtraLight.ttf"; path = "../src/assets/fonts/LeagueSpartan-ExtraLight.ttf"; sourceTree = "<group>"; };
+		8B768B3AF68A48A997824768 /* LeagueSpartan-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Regular.ttf"; path = "../src/assets/fonts/LeagueSpartan-Regular.ttf"; sourceTree = "<group>"; };
+		A05197E8F96EA6B22CE6122F /* Pods-SkinFirtsApp-SkinFirtsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinFirtsApp-SkinFirtsAppTests.release.xcconfig"; path = "Target Support Files/Pods-SkinFirtsApp-SkinFirtsAppTests/Pods-SkinFirtsApp-SkinFirtsAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		CA4513E2FA1731AC627F2F22 /* Pods-SkinFirtsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinFirtsApp.debug.xcconfig"; path = "Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CAEFE0B153484CBC9D0B4B1D /* LeagueSpartan-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Thin.ttf"; path = "../src/assets/fonts/LeagueSpartan-Thin.ttf"; sourceTree = "<group>"; };
+		CE697CE2F8869181144DCF5A /* Pods-SkinFirtsApp-SkinFirtsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinFirtsApp-SkinFirtsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SkinFirtsApp-SkinFirtsAppTests/Pods-SkinFirtsApp-SkinFirtsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CFD629C12F1F4A84A811AD2D /* LeagueSpartan-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-ExtraLight.ttf"; path = "../src/assets/fonts/LeagueSpartan-ExtraLight.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-SkinFirtsApp-SkinFirtsAppTests.a in Frameworks */,
+				0B48D2BB6DF81B2705BD136C /* libPods-SkinFirtsApp-SkinFirtsAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-SkinFirtsApp.a in Frameworks */,
+				0FF2D298CCC47688FCD8E6DB /* libPods-SkinFirtsApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-SkinFirtsApp.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-SkinFirtsApp-SkinFirtsAppTests.a */,
+				70B3D72422723B46809A6852 /* libPods-SkinFirtsApp.a */,
+				262CBC1DE08A4F0D2182DDB1 /* libPods-SkinFirtsApp-SkinFirtsAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,7 +141,6 @@
 				CAEFE0B153484CBC9D0B4B1D /* LeagueSpartan-Thin.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -179,10 +178,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-SkinFirtsApp.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-SkinFirtsApp.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-SkinFirtsApp-SkinFirtsAppTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-SkinFirtsApp-SkinFirtsAppTests.release.xcconfig */,
+				CA4513E2FA1731AC627F2F22 /* Pods-SkinFirtsApp.debug.xcconfig */,
+				719383995B609B1466BFD21F /* Pods-SkinFirtsApp.release.xcconfig */,
+				CE697CE2F8869181144DCF5A /* Pods-SkinFirtsApp-SkinFirtsAppTests.debug.xcconfig */,
+				A05197E8F96EA6B22CE6122F /* Pods-SkinFirtsApp-SkinFirtsAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -194,12 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SkinFirtsAppTests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				DCAC21025CA006D47A907178 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				D962B27BA325149E57FDEF94 /* [CP] Embed Pods Frameworks */,
+				E6D403A60C022995DA99CDF0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,13 +214,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SkinFirtsApp" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				06D0B34FBD0B3ABE2C0C9F9E /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				191D5BB4FDB4D02AFB269647 /* [CP] Embed Pods Frameworks */,
+				84BE62736711D49DC2365DE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,46 +313,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SkinFirtsApp-SkinFirtsAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		06D0B34FBD0B3ABE2C0C9F9E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -375,24 +335,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+		191D5BB4FDB4D02AFB269647 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp-SkinFirtsAppTests/Pods-SkinFirtsApp-SkinFirtsAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp-SkinFirtsAppTests/Pods-SkinFirtsApp-SkinFirtsAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp-SkinFirtsAppTests/Pods-SkinFirtsApp-SkinFirtsAppTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		84BE62736711D49DC2365DE9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -409,7 +369,46 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp/Pods-SkinFirtsApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+		D962B27BA325149E57FDEF94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp-SkinFirtsAppTests/Pods-SkinFirtsApp-SkinFirtsAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp-SkinFirtsAppTests/Pods-SkinFirtsApp-SkinFirtsAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkinFirtsApp-SkinFirtsAppTests/Pods-SkinFirtsApp-SkinFirtsAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCAC21025CA006D47A907178 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkinFirtsApp-SkinFirtsAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6D403A60C022995DA99CDF0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -459,7 +458,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-SkinFirtsApp-SkinFirtsAppTests.debug.xcconfig */;
+			baseConfigurationReference = CE697CE2F8869181144DCF5A /* Pods-SkinFirtsApp-SkinFirtsAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -486,7 +485,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-SkinFirtsApp-SkinFirtsAppTests.release.xcconfig */;
+			baseConfigurationReference = A05197E8F96EA6B22CE6122F /* Pods-SkinFirtsApp-SkinFirtsAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -510,11 +509,12 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-SkinFirtsApp.debug.xcconfig */;
+			baseConfigurationReference = CA4513E2FA1731AC627F2F22 /* Pods-SkinFirtsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SkinFirtsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -538,11 +538,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-SkinFirtsApp.release.xcconfig */;
+			baseConfigurationReference = 719383995B609B1466BFD21F /* Pods-SkinFirtsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SkinFirtsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -631,10 +632,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -703,10 +701,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

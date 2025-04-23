@@ -15,8 +15,9 @@ const HeadBar = () => {
   const navigation = useNavigation<NavigationProp<any>>();
   console.log('headbar firstLine UI rendered in HomeScreen.tsx ');
   const handleProducts = () => {
-    console.log('Products Icon Pressed');
-    navigation.navigate("Products");
+    // console.log('Products Icon Pressed');
+    // Alert.alert('Products Icon Pressed');
+     navigation.navigate('Products');
     };
 
   return (

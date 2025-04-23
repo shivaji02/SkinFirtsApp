@@ -8,7 +8,7 @@ import { COLORS } from '../../theme/colors';
 import { FontStyle } from '../../theme/fontStyle';
 import { Appearance, StyleSheet, View } from 'react-native';
 import CustomIcon from '../../components/CustomIcon';
-import { SearchIcon, SortBarIcon } from '../../assets/svg/HomeScreensvg';
+import { SearchIcon } from '../../assets/svg/HomeScreensvg';
 import { scale } from '../../utils/responsiveUtils';
 import ChatBot  from '../../screens/Home/ChatBot';
 import ProductScreen from '../../screens/ecom/ProductScreen';
@@ -20,12 +20,6 @@ const HeaderRight = () => (
     </View>
 );
 
-type HomeStackParamList = {
-    HomeScreen: undefined;
-    DoctorsList: { filter: string };
-    DoctorInfo: { doctor: any };
-    ChatBot: undefined;
-};
 
 export const HomeStack = () => {
     const Stack = createNativeStackNavigator();
@@ -75,6 +69,7 @@ export const HomeStack = () => {
             <Stack.Screen name="ChatBot" component={ChatBot} />
             <Stack.Screen name ="Products" component={ProductScreen}/>
             <Stack.Screen name="ProductDetail" component={ProductDetail}/>
+
         </Stack.Navigator>
     );
 };

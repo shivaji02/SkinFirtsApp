@@ -9,7 +9,7 @@ import ChatBot from '../../screens/Home/ChatBot';
 
 const BottomTab = createBottomTabNavigator();
 
-export const AppBottomTab = () => {
+ const AppBottomTab = () => {
   console.log('AppBottomTab.tsx');
   return (
     <BottomTab.Navigator
