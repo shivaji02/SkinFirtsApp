@@ -1,6 +1,4 @@
-import { AppointmentT } from './index';
 // src/types/index.ts
-
 import { TextInputProps, ViewStyle } from 'react-native';
 import { SvgProps } from 'react-native-svg';
 
@@ -133,5 +131,24 @@ export interface AppointmentBadgeProps{
 export  interface appointmentsT {
   time: string;
   title: string;
+  description: string;
+}
+
+export     interface DoctorT {
+  id: number;
+  profileImage: string;
+  name: string;
+  specialty: string;
+  rating: number;
+  reviews: number;
+  gender: string;
+  isFav: boolean;
+  location: string;
+  experience: number;
+  languages: string[];
+  hospital: string;
+  contact: {
+    phone: string;
+  };
   description: string;
 }

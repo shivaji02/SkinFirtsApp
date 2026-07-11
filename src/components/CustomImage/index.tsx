@@ -13,7 +13,12 @@ const CustomImage: React.FC<CustomImageProps> = ({
   const [loading, setLoading] = useState(true);
 
   return (
-    <View style={[styles.container, { height, width, borderRadius }]}>
+    <View
+      style={[
+        styles.container,
+        { height: height || 'auto', width: width || 'auto', borderRadius: borderRadius || 0 },
+      ]}
+    >
       {loading && (
         <ActivityIndicator
           style={styles.loading}
@@ -25,7 +30,7 @@ const CustomImage: React.FC<CustomImageProps> = ({
         source={source}
         style={[
           styles.image,
-          { height, width, borderRadius },
+          { height: height || 'auto', width: width || 'auto', borderRadius: borderRadius || 0 },
           style,
         ]}
         onLoadEnd={() => setLoading(false)}

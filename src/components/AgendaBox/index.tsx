@@ -15,7 +15,7 @@ export const AgendaBox = ({ selectedDate }: AgendaBoxProps) => {
 
     if (appointmentsForDate.length === 0) {
         return (
-            <View style={styles.noAppContainer}>
+            <View style={[styles.noAppContainer, styles.Container]}>
                 <Text style={styles.noapp}>
                     No Appointments Available for today
                 </Text>
@@ -24,9 +24,9 @@ export const AgendaBox = ({ selectedDate }: AgendaBoxProps) => {
     }
     console.log("AgendaBox.tsx result")
     return (
-        <View >
+        <View style={styles.parcon}>
             {appointmentsForDate.map((appointment, index) => (
-                <View key={index} style={styles.Container} >
+             <View key={index} style={styles.Container} >
                     <Text style={styles.time}>{appointment.time}</Text>
                     <Text style={styles.doctor}>{appointment.title}</Text>
                     <Text style={styles.desc}>{appointment.description}</Text>
@@ -40,8 +40,16 @@ const styles = StyleSheet.create({
     Container: {
         flexDirection: 'row',
         justifyContent: 'center',
+        alignItems:'center',
+        alignSelf:'center',
         gap: '10',
-        shadowRadius: 20,
+        backgroundColor: COLORS.common.white,
+        borderRadius:20,
+        width:widthPercentageToDP(35),
+        padding:15,
+    },
+    parcon:{
+
     },
     time: {
         color: COLORS.primary.main,
@@ -60,7 +68,7 @@ const styles = StyleSheet.create({
 
     },
     noAppContainer: {
-        flex: 1,
+        // flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },

@@ -5,17 +5,18 @@ import { HomeStack } from './homeStack';
 import { ActiveHomeIcon, ActiveChatIcon, InactiveHomeIcon, InactiveChatIcon, ActiveProfileIcon, InactiveProfileIcon,  ActiveCalendarIcon, InactiveCalendarIcon } from '../../assets/svg/TabBarSvg'
 import { COLORS} from '../../theme/colors';
 import LoginScreen from '../../screens/auth/loginScreen/loginScreen';
+import ChatBot from '../../screens/Home/ChatBot';
 
 const BottomTab = createBottomTabNavigator();
 
-export const AppBottomTab = () => {
+ const AppBottomTab = () => {
   console.log('AppBottomTab.tsx');
   return (
     <BottomTab.Navigator
       screenOptions={{
         headerShown: false,
         tabBarStyle: styles.tabBar,
-        tabBarShowLabel: false,//label is hidden
+        tabBarShowLabel: false,//text label under icon is hidden
       }}
     >
       <BottomTab.Screen
@@ -33,7 +34,7 @@ export const AppBottomTab = () => {
       />
       <BottomTab.Screen
         name="Chat"
-        component={HomeStack}
+        component={ChatBot}
         options={{
           tabBarLabel: 'Chat',
           tabBarIcon: ({ focused, size }) =>
@@ -81,7 +82,7 @@ const styles = {
     borderRadius: 50,
     paddingTop: 10,
     bottom: 10,
-    position: 'absolute',
+    position: 'absolute' as 'absolute',
     marginHorizontal: 17,
   },
 };
